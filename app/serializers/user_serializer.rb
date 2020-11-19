@@ -1,6 +1,6 @@
 class UserSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :username, :name, :hometown
+  attributes :username, :name
 
     # belongs_to :hometown, serializer: HometownSerializer
     attribute :hometown do |user|
