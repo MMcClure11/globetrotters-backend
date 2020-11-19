@@ -30,5 +30,4 @@ class Api::V1::SessionsController < ApplicationController
     }, status: :ok
   end
 
-
 end
