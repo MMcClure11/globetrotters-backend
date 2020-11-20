@@ -19,8 +19,7 @@ class Api::V1::UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
-    byebug
-    @location =  Location.find_or_create_by(city: params[:hometown][:city], state: params[:hometown][:state], country: params[:hometown][:country])
+    @location =  Location.find_or_create_by(city: params[:user][:hometown][:city], state: params[:user][:hometown][:state], country: params[:user][:hometown][:country])
 
     @user.hometown = @location
     if @user.save
@@ -56,6 +55,6 @@ class Api::V1::UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.permit(:name, :username, :password)
+      params.require(:user).permit(:name, :username, :password)
     end
 end
