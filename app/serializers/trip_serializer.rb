@@ -12,13 +12,5 @@ class TripSerializer
     end
   end
 
-  attributes :visits do |trip|
-    trip.visits.map do |vis|
-      {
-        attraction_id: vis.attraction_id
-      }
-    end
-  end
-
   # has_many :locations, serializer: LocationSerializer
 end

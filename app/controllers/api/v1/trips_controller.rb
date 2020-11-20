@@ -1,5 +1,4 @@
 class Api::V1::TripsController < ApplicationController
-
   before_action :set_trip, only: [:show, :update, :destroy]
 
   # GET /trips
@@ -71,5 +70,4 @@ class Api::V1::TripsController < ApplicationController
     def trip_params
       params.require(:trip).permit(:start_date, :end_date, :name)
     end
-
 end
