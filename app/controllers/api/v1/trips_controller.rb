@@ -23,7 +23,6 @@ class Api::V1::TripsController < ApplicationController
 
   # POST /trips
   def create
-    # byebug
     @trip = current_user.trips.build(trip_params)
 
     if @trip.save
